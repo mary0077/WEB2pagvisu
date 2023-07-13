@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Resultados da Consulta</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <title>Resultado da Consulta</title>
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-  <h1>Resultados da Consulta</h1>
-  <p>Parâmetros da consulta:</p>
-  <p>Nome: <%= nome %></p>
-  <p>Categoria: <%= categoria %></p>
-  <!-- Exibir os resultados da consulta aqui -->
+  <h1>Resultado da Consulta</h1>
+
+  <% resultados.forEach((resultado) => { %>
+    <p>Nome: <%= resultado.nome %></p>
+    <p>Idade: <%= resultado.idade %></p>
+    <hr>
+  <% }) %>
 </body>
 </html>

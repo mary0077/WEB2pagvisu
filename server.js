@@ -22,8 +22,6 @@ const resultados = consultarDados(req.body.filtro); // Exemplo hipotético
 res.render('resultado', { dados: resultados }); // Renderiza a view "resultado" passando os dados resultantes da consulta
 });
 
-// Resto do código do servidor
-
 // Inicie o servidor
 app.listen(port, () => {
   console.log(`Servidor iniciado na porta ${port}`);
