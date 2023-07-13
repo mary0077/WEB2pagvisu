@@ -1,3 +1,6 @@
-# WEB2pagvisu
+# Web2Backend
 
-Alunas: Lana Cláudia & Mariana Gomes
+Tema: Copa do Mundo Futebol Feminino
+
+Dupla: Lana Cláudia
+     : Mariana Gomes
