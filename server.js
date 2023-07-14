@@ -29,14 +29,6 @@ app.get('/topo', (req, res) => {
   res.render('topo');
 });
 
-// Defina a rota para o formulário de consulta (POST)
-app.post('/consulta', (req, res) => {
-  // Realize a consulta na base de dados com base nos parâmetros recebidos
-const resultados = consultarDados(req.body.filtro); // Exemplo hipotético
-
-res.render('resultado', { dados: resultados }); // Renderiza a view "resultado" passando os dados resultantes da consulta
-});
-
 // Use o router
 app.use(router);
 
