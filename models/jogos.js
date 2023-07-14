@@ -1,17 +1,13 @@
-const { DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Jogos = sequelize.define(
-  'Jogos',
+  'Jogos', 
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-    },
-    data: {
-      type: DataTypes.DATE,
-      allowNull: false,
     },
     horario: {
       type: DataTypes.TIME,
@@ -37,6 +33,7 @@ const Jogos = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    
   },
   {
     tableName: 'jogos',
@@ -44,12 +41,21 @@ const Jogos = sequelize.define(
   }
 );
 
-Jogos.sync()
+sequelize.sync()
   .then(() => {
     console.log('Tabela Jogos criada com sucesso!');
+    // Criar dados para a tabela Jogos
+
+
+    return Jogos.bulkCreate([
+      { horario: '15:00', equipe_casa: 'Time A', equipe_visitante: 'Time B', placar_casa: 2, placar_visitante: 1, local: 'Estádio X' },
+      { horario: '17:30', equipe_casa: 'Time C', equipe_visitante: 'Time D', placar_casa: 0, placar_visitante: 0, local: 'Estádio Y' },
+    ]);
+  })
+  .then(() => {
+    console.log('Dados inseridos na tabela Jogos!');
   })
   .catch((error) => {
     console.log('Erro ao criar tabela Jogos:', error);
   });
-
-module.exports = Jogos;
+  module.exports = Jogos;

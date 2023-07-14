@@ -1,19 +1,32 @@
+const Jogos = require('../models/jogos');
+
+
+
 const consultaController = {
-  realizarConsulta: (req, res) => {
-    // Receba os parâmetros de filtro da requisição
-    const selecao = req.query.selecao;
+  realizarConsulta: async (req, res) => {
+    try {
+      // Receba os parâmetros de filtro da requisição
+      const { horario, equipe_casa, equipe_visitante, placar_casa, placar_visitante, placar_local, local } = req.query;
 
-    // Realize a consulta no banco de dados com base nos parâmetros
-    // Supondo que você esteja usando um ORM como o Sequelize, faça a consulta utilizando o modelo apropriado
+      // Realize a consulta no banco de dados com base nos parâmetros
+      const resultados = await Jogos.findAll({
+        where: {
+          horario: horario || null,
+          equipe_casa: equipe_casa || null,
+          equipe_visitante: equipe_visitante || null,
+          placar_casa: placar_casa || null,
+          placar_visitante: placar_visitante || null,
+          local: local || null
+        }
+      });
+      
 
-    const resultados = [
-      { nome: 'Jogadora 1', idade: 25 },
-      { nome: 'Jogadora 2', idade: 27 },
-      { nome: 'Jogadora 3', idade: 23 },
-    ];
-
-    // Renderize a view que exibirá os resultados da consulta
-    res.render('resultado', { resultados });
+      // Renderize a view que exibirá os resultados da consulta
+      res.render('resultado', { resultados });
+    } catch (error) {
+      console.error('Erro ao realizar consulta:', error);
+      res.status(500).send('Erro ao realizar consulta');
+    }
   },
 };
 

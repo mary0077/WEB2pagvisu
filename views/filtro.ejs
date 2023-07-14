@@ -8,14 +8,23 @@
   <h1>Filtro de Consulta</h1>
 
   <form action="/consultar" method="GET">
-    <!-- Adicione os campos de filtro aqui -->
-    <label for="selecao">Seleção:</label>
-    <select name="selecao" id="selecao">
-      <option value="brasil">Brasil</option>
-      <option value="franca">França</option>
-      <option value="africa">Africa do Sul</option>
-      <option value="estados-unidos">Estados Unidos</option>
-    </select>
+    <label for="equipe_casa">Equipe Casa:</label>
+    <input type="text" name="equipe_casa" id="equipe_casa">
+
+    <label for="horario">Horário:</label>
+    <input type="text" name="horario" id="horario">
+
+    <label for="equipe_visitante">Equipe Visitante:</label>
+    <input type="text" name="equipe_visitante" id="equipe_visitante">
+
+    <label for="placar_casa">Placar Casa:</label>
+    <input type="number" name="placar_casa" id="placar_casa">
+
+    <label for="placar_visitante">Placar Visitante:</label>
+    <input type="number" name="placar_visitante" id="placar_visitante">
+
+    <label for="local">Local:</label>
+    <input type="text" name="local" id="local">
 
     <button type="submit">Consultar</button>
   </form>

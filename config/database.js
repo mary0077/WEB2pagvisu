@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('futebolfeminino', 'root', '123456', {
+const sequelize = new Sequelize('futebolfeminino', 'aluno', 'ifpe2023', {
   host: 'localhost',
   dialect: 'mysql',
 });
@@ -22,7 +22,7 @@ const initializeDatabase = async () => {
     console.error('Ocorreu um erro ao inicializar as tabelas:', error);
   }
 };
-
+  
 initializeDatabase();
 
 module.exports = sequelize;

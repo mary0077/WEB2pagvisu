@@ -5,6 +5,8 @@ const router = express.Router();
 const path = require('path');
 const port = 3040;
 const consultaController = require('./controllers/consultaController');
+const Jogos= require ('./models/jogos');
+
 
 app.use(express.static('public'));
 

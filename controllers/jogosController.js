@@ -1,4 +1,4 @@
-const Jogos = require('../models/jogosModel');
+const Jogos = require('../models/jogos');
 
 const jogosController = {
   listar: async (req, res) => {
@@ -28,5 +28,4 @@ const jogosController = {
     },
   };
   
-
 module.exports = jogosController;

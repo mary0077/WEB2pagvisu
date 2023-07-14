@@ -2,17 +2,33 @@
 <html>
 <head>
   <title>Resultado da Consulta</title>
-  <link rel="stylesheet" href="../public/css/estilo.css">
 </head>
 <body>
   <h1>Resultado da Consulta</h1>
 
   <% if (resultados.length > 0) { %>
-    <ul>
-      <% resultados.forEach((resultado) => { %>
-        <li><%= resultado.nome %> - <%= resultado.idade %> anos</li>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Horário</th>
+        <th>Equipe Casa</th>
+        <th>Equipe Visitante</th>
+        <th>Placar Casa</th>
+        <th>Placar Visitante</th>
+        <th>Local</th>
+      </tr>
+      <% resultados.forEach((jogo) => { %>
+        <tr>
+          <td><%= jogo.id %></td>
+          <td><%= jogo.horario %></td>
+          <td><%= jogo.equipe_casa %></td>
+          <td><%= jogo.equipe_visitante %></td>
+          <td><%= jogo.placar_casa %></td>
+          <td><%= jogo.placar_visitante %></td>
+          <td><%= jogo.local %></td>
+        </tr>
       <% }) %>
-    </ul>
+    </table>
   <% } else { %>
     <p>Nenhum resultado encontrado.</p>
   <% } %>
