@@ -2,15 +2,19 @@
 <html>
 <head>
   <title>Resultado da Consulta</title>
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="/estilo.css">
 </head>
 <body>
   <h1>Resultado da Consulta</h1>
 
-  <% resultados.forEach((resultado) => { %>
-    <p>Nome: <%= resultado.nome %></p>
-    <p>Idade: <%= resultado.idade %></p>
-    <hr>
-  <% }) %>
+  <% if (resultados.length > 0) { %>
+    <ul>
+      <% resultados.forEach((resultado) => { %>
+        <li><%= resultado.nome %> - <%= resultado.idade %> anos</li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>Nenhum resultado encontrado.</p>
+  <% } %>
 </body>
 </html>
