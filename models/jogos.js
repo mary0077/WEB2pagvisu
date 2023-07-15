@@ -46,7 +46,6 @@ sequelize.sync()
     console.log('Tabela Jogos criada com sucesso!');
     // Criar dados para a tabela Jogos
 
-
     return Jogos.bulkCreate([
       { horario: '15:00', equipe_casa: 'Time A', equipe_visitante: 'Time B', placar_casa: 2, placar_visitante: 1, local: 'Estádio X' },
       { horario: '17:30', equipe_casa: 'Time C', equipe_visitante: 'Time D', placar_casa: 0, placar_visitante: 0, local: 'Estádio Y' },
