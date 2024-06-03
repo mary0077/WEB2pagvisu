@@ -5,7 +5,8 @@
     "jsdom": "^22.1.0",
     "mysql2": "^3.5.1",
     "nodemon": "^3.0.1",
-    "sequelize": "^6.32.1"
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
   },
   "scripts": {
     "start": "node server.js"
